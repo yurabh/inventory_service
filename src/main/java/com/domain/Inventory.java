@@ -17,7 +17,7 @@ public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="skuCode")
+    @Column(name = "skuCode")
     private String skuCode;
     private Integer stock;
 }

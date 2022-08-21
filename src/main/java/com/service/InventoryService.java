@@ -1,9 +1,12 @@
 package com.service;
 
+import com.domain.Inventory;
 import com.repository.InventoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -12,6 +15,7 @@ public class InventoryService {
 
     @Transactional(readOnly = true)
     public boolean isInStoke(String skuCode) {
-        return inventoryRepository.findBySkuCode(skuCode).isPresent();
+        Optional<Inventory> inventory = inventoryRepository.findBySkuCode(skuCode);
+        return inventory.filter(value -> value.getStock() > 0).isPresent();
     }
 }
