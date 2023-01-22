@@ -2,7 +2,7 @@
                                    
 1)About the project.
 
-This project is an inverter microservice microservice that sends messages using bus-amqp.
+This project is an inverter microservice that sends messages using bus-amqp.
 
 Spring Cloud Client, Spring Cloud Config, Spring Cloud Evreka Client are also used.
 
